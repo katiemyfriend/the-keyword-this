@@ -52,15 +52,16 @@ function Car(make, model, year) {
 var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
 
+Car.prototype.move = 0;
+Car.prototype.moveCar = function() {
+  return this.move += 10;
+}
+
+
 prius.moveCar(); //increments prius' move property by 10. Returns the new move property.
 mustang.moveCar(); //increments mustang' move property by 10. Returns the new move property.
 
 //Hint, you'll need to write a moveCar function which is added to every object that is being returned from the Car function. You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the right object (prius vs mustang).
-
-var moveCar = function() {
-  this.move = 0;
-  return this.move += 10;
-}
 
 //Continuation of previous problem
 
